@@ -40,6 +40,7 @@ server.use(cors({ origin: "http://localhost:5000", credentials: true }));
 server.use(express.json());
 server.use(cookieParser());
 server.use("/uploads", express.static(path.join(__dirname, "uploads")));
+server.use(express.static(path.join(__dirname, "build")));
 
 //Routes
 // server.post(
