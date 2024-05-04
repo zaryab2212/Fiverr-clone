@@ -1,0 +1,51 @@
+{
+    
+    "builds": [
+      {
+        "src": "index.js",
+        "use": "@vercel/node"
+      },
+      {
+        "src": "build/**",
+        "use": "@vercel/static"
+
+      }
+    
+    ],
+"routes": [
+   
+  { "src": "/auth/login", "dest": "index.js" },
+  { "src": "/auth/register", "dest": "index.js" },
+  { "src": "/auth/get", "dest": "index.js" },
+  { "src": "/auth/logout", "dest": "index.js" },
+  { "src": "/auth/userinfo", "dest": "index.js" },
+  { "src": "/auth", "dest": "index.js" },
+
+  { "src": "/user/(.*)", "dest": "index.js" },
+    
+  { "src": "/gig/create/", "dest": "index.js" },
+  { "src": "/gig/(.*)", "dest": "index.js" },
+  { "src": "/gig", "dest": "index.js" },
+  
+  { "src": "/order/(.*)", "dest": "index.js" },
+  { "src": "/order", "dest": "index.js" },
+
+  { "src": "/conversation/create/", "dest": "index.js" },
+  { "src": "/conversation/(.*)", "dest": "index.js" },
+  { "src": "/conversation", "dest": "index.js" },
+ 
+ 
+     
+     
+        { "src": "/review/create/", "dest":"index.js" },
+        { "src": "/review/(.*)", "dest":"index.js" },
+  
+
+         
+        { "src": "/", "dest": "index.js" }, 
+
+        { "src": "/", "dest": "build/index.html" },
+        { "src": "/(.+)", "dest": "build/$1" }
+      ]
+
+}
